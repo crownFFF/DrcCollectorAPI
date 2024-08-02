@@ -1,8 +1,8 @@
 <?php
 
-$dsn = "mysql:host=sql213.byethost7.com;dbname= b7_36819277_collector;charset=utf8";
-$user = "b7_36819277";
-$password = "Aa24619622";
+$dsn = "mysql:host=localhost;dbname=test;charset=utf8";
+$user = "root";
+$password = "";
 
 $link = new PDO($dsn, $user, $password);
 
