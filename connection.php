@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=test;charset=utf8";
+$dsn = "mysql:host=localhost;dbname=fongminb_collect;charset=utf8";
 $user = "root";
 $password = "";
 
