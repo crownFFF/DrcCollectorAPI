@@ -1,10 +1,16 @@
 <?php
-header('Access-Control-Allow-Origin:*');
-header('Content-Type:application/json;charset=utf-8');
+// 允许来自任何来源的请求（可以根据需要限制特定的来源）
+header('Access-Control-Allow-Origin: *');
+
+// 允许的请求方法
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+
+// 允许的请求头
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 require_once('./connection.php');
 
-$sql = 'SELECT type FROM type';
+$sql = 'SELECT * FROM type';
 $result = $link->query($sql);
 
 $result_num = $result->rowCount();
