@@ -7,7 +7,7 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 
 // 允许的请求头
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
-
+header('Content-Type:application/json');
 require_once('./connection.php');
 
 $sql = 'SELECT * FROM type';
