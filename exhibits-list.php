@@ -1,13 +1,9 @@
 <?php
-// 允许来自任何来源的请求（可以根据需要限制特定的来源）
 header('Access-Control-Allow-Origin: *');
-
-// 允许的请求方法
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-
-// 允许的请求头
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 header('Content-Type:application/json');
+
 require_once('./connection.php');
 
 $sql = 'SELECT * FROM type';
