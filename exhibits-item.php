@@ -24,10 +24,6 @@ if ($id) {
     $retcode = "找不到相關資料";
   }
 
-
-
-
-
 } else {
   $sql = 'SELECT type.type,type.typeEN,cover.id,cover_img.img,cover.theme,cover.time,cover_img.sort FROM type,cover,cover_img where cover_img.cover_id = cover.id AND cover.type=type.id and cover_img.sort = 1';
   $result = $link->query($sql);
