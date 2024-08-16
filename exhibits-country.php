@@ -52,6 +52,16 @@ if ($country_from || $country_to) {
   } else {
     $retcode = "找不到相關資料";
   }
+} elseif (isset($data['country_list']) && is_array($data['country_list'])){
+  $country_list = $data['country_list'];
+  $placeholders = implode(',', array_fill(0, count($country_list), '?'));
+  $sql = "SELECT id,c_name FROM country WHERE id IN ($placeholders)";
+  $stmt = $link->prepare($sql);
+  $stmt->execute($country_list);
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $retcode = $results;
+} else {
+  $retcode = "找不到相關資料";
 }
 
 
