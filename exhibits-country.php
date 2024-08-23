@@ -25,6 +25,7 @@ if ($country_from || $country_to) {
   } else {
     $retcode = "找不到相關資料";
   }
+
   if (!empty($country_to)) {
     $sql = "SELECT id,c_name FROM country WHERE id = " . $country_to;
 
@@ -39,6 +40,7 @@ if ($country_from || $country_to) {
       array_push($retcode, $result);
     }
   }
+  
 } elseif ($country_id || '') {
   $sql = "SELECT id,c_name FROM country WHERE id =" . $country_id;
 
@@ -52,7 +54,7 @@ if ($country_from || $country_to) {
   } else {
     $retcode = "找不到相關資料";
   }
-} elseif (isset($data['country_list']) && is_array($data['country_list'])){
+} elseif (isset($data['country_list']) && is_array($data['country_list'])) {
   $country_list = $data['country_list'];
   $placeholders = implode(',', array_fill(0, count($country_list), '?'));
   $sql = "SELECT id,c_name FROM country WHERE id IN ($placeholders)";
