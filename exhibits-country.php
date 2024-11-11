@@ -17,6 +17,7 @@ if ($country_from || $country_to) {
 
   $result = $link->query($sql);
   $result_num = $result->rowCount();
+
   if ($result_num > 0) {
     $retcode = [];
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -30,6 +31,7 @@ if ($country_from || $country_to) {
     $sql = "SELECT id,c_name FROM country WHERE id = " . $country_to;
 
     $result = $link->query($sql);
+
     if ($result) {
       $result_num = $result->rowCount();
       while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -54,7 +56,7 @@ if ($country_from || $country_to) {
   } else {
     $retcode = "找不到相關資料";
   }
-} elseif (isset($data['country_list']) && is_array($data['country_list'])) {
+} elseif (isset($data['country_list']) && is_array($data['country_list'])){
   $country_list = $data['country_list'];
   $placeholders = implode(',', array_fill(0, count($country_list), '?'));
   $sql = "SELECT id,c_name FROM country WHERE id IN ($placeholders)";
